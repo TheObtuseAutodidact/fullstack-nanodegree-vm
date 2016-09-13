@@ -1,0 +1,15 @@
+<!-- <h1>This page will be for making a new restaurant</h1> -->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Add New Restaurant</h1>
+    <form action="{{ url_for('newRestaurant') }}" method="post">
+      <p>Name</p>
+      <input type="text" name="name" >
+
+        <input type="submit" name="name" value="Create">
+
+      <a href="{{ url_for('showRestaurants') }}">Cancel</a>
+    </form>
+{% endblock content %}

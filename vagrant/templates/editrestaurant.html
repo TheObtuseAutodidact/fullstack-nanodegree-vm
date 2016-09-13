@@ -1,0 +1,19 @@
+<!-- <h1>
+  This page will be used to edit the restaurant with id of {{ restaurant_id }}
+</h1> -->
+
+
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Edit Restaurant</h1>
+    <h3>You are editing {{ restaurant.name }}</h3>
+    <form action="{{ url_for('editRestaurant', restaurant_id=restaurant.id) }}" method="post">
+      <p>Name</p>
+      <input type="text" name="name" value="{{ restaurant.name }}">
+
+        <input type="submit" name="name" value="Edit">
+
+      <a href="{{ url_for('showRestaurants') }}">Cancel</a>
+    </form>
+{% endblock content %}

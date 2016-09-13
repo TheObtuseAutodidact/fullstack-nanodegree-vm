@@ -1,0 +1,28 @@
+<!-- <h1>
+  This page will display a form to create a new menu item for the
+  restuarant with an id of {{ restaurant_id }}
+</h1> -->
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1>Add New Menu Item</h1>
+
+  <form  action="{{ url_for('newMenuItem', restaurant_id=restaurant_id) }}" method="post">
+      <input type="text" name="name" placeholder="Name"><br>
+      <input type="text" name="description" placeholder="Description"><br>
+      <input type="text" name="price" placeholder="Price"><br><br>
+
+      <input type="radio" name="course" value="Entree"> Entree<br>
+      <input type="radio" name="course" value="Appetizer"> Appetizer<br>
+      <input type="radio" name="course" value="Dessert"> Dessert<br>
+      <input type="radio" name="course" value="Beverage"> Beverage<br>
+
+
+    <input type="submit" value="Create">
+
+    <a href="{{ url_for('showMenu', restaurant_id=restaurant_id) }}">Cancel</a>
+  </form>
+  {% endblock content %}

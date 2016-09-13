@@ -1,0 +1,17 @@
+<!-- <h1>
+  This page will be for deleting the menu item with an id of {{ restaurant_id }}
+  belonging to the restaurant with an id of {{ menu_id }}
+</h1> -->
+
+
+
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Delete A Menu Item</h1>
+  <p>Are you sure you wish to Delete {{ item.name }}</p>
+  <form action="#" method="post">
+    <input type="submit" value="Delete">
+    <a href="#">Cancel</a>
+  </form>
+  {% endblock content %}

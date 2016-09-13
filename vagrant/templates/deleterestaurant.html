@@ -1,0 +1,17 @@
+<!-- <h1>
+  This page will be for deleting a restaurant with id of {{ restaurant_id }}
+</h1> -->
+
+
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Delete This Resatuarant</h1>
+  <p>
+    Are you sure you want to Delete {{ restaurant.name }}?
+  </p>
+  <form action="#" method="post">
+    <input type="submit" value="Delete">
+    <a href="{{ url_for('showRestaurants') }}">Cancel</a>
+  </form>
+{% endblock content %}

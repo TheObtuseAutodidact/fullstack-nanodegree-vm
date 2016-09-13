@@ -1,0 +1,30 @@
+<!-- <h1>
+  This page will be an edit form for the menu item with an id of {{ menu_id }}
+  belonging to the restaurant with an id of {{ restaurant_id }}
+</h1> -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1>Edit Menu Item</h1>
+
+  <form  action="#" method="post">
+    <input type="text" name="name" value="{{ item.name }}"><br>
+    <input type="text" name="description" value="{{ item.description }}"><br>
+    <input type="text" name="price" value="{{ item.price }}"><br><br>
+
+    <input type="radio" name="course" value="Entree"
+      {% if item.course == "Entree" %}checked{% endif %}> Entree<br>
+    <input type="radio" name="course" value="Appetizer"
+      {% if item.course == "Appetizer" %}checked{% endif %}> Appetizer<br>
+    <input type="radio" name="course" value="Dessert"
+      {% if item.course == 'Dessert' %}checked{% endif %}> Dessert<br>
+    <input type="radio" name="course" value="Beverage"
+      {% if item.course == "Beverage" %}checked{% endif %}> Beverage<br>
+
+    <input type="submit" value="Edit">
+
+    <a href="#">Cancel</a>
+  </form>
+  {% endblock content %}
